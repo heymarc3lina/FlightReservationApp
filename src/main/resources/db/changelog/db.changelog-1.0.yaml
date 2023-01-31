@@ -1,0 +1,69 @@
+databaseChangeLog:
+  - changeSet:
+      id: load data to plane table
+      author: AgataPietrzycka
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: UTF-8
+            path: db/sql/plane.sql
+
+
+
+  - changeSet:
+      id: load data to airports table
+      author: AgataPietrzycka
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: UTF-8
+            path: db/sql/airports.sql
+
+
+
+  - changeSet:
+      id: load data categories table
+      author: AgataPietrzycka
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: UTF-8
+            path: db/sql/classCategories.sql
+
+
+
+  - changeSet:
+      id: load data seats table
+      author: AgataPietrzycka
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: UTF-8
+            path: db/sql/seatPlane1.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: UTF-8
+            path: db/sql/seatPlane2.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: UTF-8
+            path: db/sql/seatPlane3.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: UTF-8
+            path: db/sql/seatPlane4.sql
+        - sqlFile:
+            dbms: postgresql
+            encoding: UTF-8
+            path: db/sql/seatPlane5.sql
+
+  - changeSet:
+      id: remove redundant data
+      author: AgataPietrzycka
+      changes:
+        - sql:
+            dbms: postgresql
+            sql: DELETE FROM Airport WHERE airport.airport_id=10;
+
+
+
